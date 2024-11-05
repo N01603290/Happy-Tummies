@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1><%= title %></h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/menu">Menu</a>
+            <a href="/order">Order</a>
+            <a href="/order-status">Order Status</a>
+        </nav>
+    </header>
+    <main>
+        <section class="menu-list">
+            <% items.forEach(item => { %>
+                <div class="menu-item">
+                    <h3><%= item.name %> - $<%= item.price.toFixed(2) %></h3>
+                    <img src="<%= item.image %>" alt="<%= item.name %>">
+                    <p><%= item.description %></p>
+                </div>
+            <% }) %>
+        </section>
+    </main>
+</body>
+</html>

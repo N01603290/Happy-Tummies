@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Place Your Order</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/menu">Menu</a>
+            <a href="/order">Order</a>
+            <a href="/order-status">Order Status</a>
+        </nav>
+    </header>
+    <main>
+        <form action="/submit-order" method="POST" class="order-form">
+            <label for="customerName">Name:</label>
+            <input type="text" id="customerName" name="customerName" required>
+
+            <label for="deliveryAddress">Address:</label>
+            <input type="text" id="deliveryAddress" name="deliveryAddress" required>
+
+            <fieldset>
+                <legend>Select Menu Items:</legend>
+                <input type="checkbox" id="pizza" name="menuItems" value="Pizza">
+                <label for="pizza">Pizza</label><br>
+                <input type="checkbox" id="burger" name="menuItems" value="Burger">
+                <label for="burger">Burger</label><br>
+            </fieldset>
+
+            <button type="submit">Order Now</button>
+        </form>
+    </main>
+</body>
+</html>
